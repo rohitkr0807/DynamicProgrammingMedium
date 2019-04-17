@@ -1,4 +1,7 @@
 package Medium;
+
+import java.util.ArrayList;
+
 /*
 Jacobsthal and Jacobsthal-Lucas numbers
 The Jacobsthal sequence is an additive sequence similar to the Fibonacci sequence, defined by the recurrence relation Jn = Jn-1 + Jn-2, with initial terms J0 = 0 and J1 = 1. A number in the sequence is called a Jacobsthal number. They are a specific type of Lucas sequence Un(P, Q) for which P = -1 and Q = -2.
@@ -24,6 +27,38 @@ public class Jacobsthal {
         if(n==1)
             return 1;
         return jacobfib(n-1)+2*jacobfib(n-2);
+    }
+    public static int ans(int arr[])
+    {
+//        ArrayList<Integer> al = new ArrayList<>();
+        int i=0;
+        int j= arr.length-1;
+        while (i<j)
+        {
+            if(arr[i]==0 && arr[j]==1)
+            {
+                i++;
+                j--;
+            }
+            else if(arr[i]==0 && arr[j]==0)
+            {
+                i++;
+            }
+            else if(arr[i]==1 && arr[j]==0)
+            {
+                arr[i]=0;
+                arr[j]=1;
+                i++;
+                j--;
+            }
+        }
+
+
+
+
+        return 0;
+
+
     }
 
 }
