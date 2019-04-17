@@ -60,4 +60,8 @@ public class DelannoyNumber {
 
         return ans[m][n];
     }
+    public static int fac(int n)
+    {
+        return 0;
+    }
 }
