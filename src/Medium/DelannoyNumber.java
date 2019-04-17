@@ -17,9 +17,12 @@ Number of cells on a surface of an m-dimensional von Neumann neighborhood of rad
 public class DelannoyNumber {
     public static void main(String[] args) {
 //        System.out.println(amount(45.88));
-        System.out.println(amount2(1050));
-        System.out.println(delannoyfib(3,3));
-        System.out.println(delannoy(3,4));
+//        System.out.println(amount2(1050));
+//        System.out.println(delannoyfib(3,3));
+//        System.out.println(delannoy(3,4));
+
+        System.out.println(facBetter(15));
+        System.out.println(fac(15));
     }
     public static String amount(double amount)
     {
@@ -62,6 +65,20 @@ public class DelannoyNumber {
     }
     public static int fac(int n)
     {
-        return 0;
+        if(n==1)
+            return 1;
+
+        return fac(n-1)*n;
+    }
+    public static int facBetter(int n)
+    {
+        int fac[]= new int[n+1];
+        fac[0]=0;
+        fac[1]=1;
+        for (int i = 2; i <=n ; i++) {
+            fac[i]=i*fac[i-1];
+        }
+
+        return fac[n];
     }
 }
